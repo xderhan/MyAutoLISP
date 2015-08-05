@@ -1,0 +1,16 @@
+;;; VLisp project file [V2.0] MyAutoLISP saved to:[D:/4 KERJA/AUTOCAD TIPS/MyAutoLISP/scripts] at:[8/5/15] 
+(VLISP-PROJECT-LIST
+  :NAME
+  MyAutoLISP
+  :OWN-LIST
+  ("HELLO" "ADDLINE" "TLEN")
+  :FAS-DIRECTORY
+  ""
+  :TMP-DIRECTORY
+  ""
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

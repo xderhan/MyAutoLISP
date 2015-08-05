@@ -27,6 +27,6 @@ TLEN.LSP - Total LENgth of selected objects
               (T 0))
           tl (+ tl l)
           n (1- n)))
-  (alert (strcat "Total length of selected objects is " (rtos tl)))
+  (prompt (strcat "Total length of selected objects is " (rtos tl)))
   (princ)
 )
