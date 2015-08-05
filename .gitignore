@@ -1,8 +1,12 @@
 *.FASL
 *.fasl
-*.lisp-temp
 *.FAS
 *.fas
+*.DCL
+*.dcl
+*.VLX
+*.vlx
+*.lisp-temp
 *.ob
 *.pdb
 *._*
