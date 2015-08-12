@@ -1,6 +1,7 @@
 ;|
 
 TLEN.LSP - Total LENgth of selected objects
+The result will be automatically copied to clipboard
 (c) 1998 Tee Square Graphics
 
 |;
@@ -27,6 +28,33 @@ TLEN.LSP - Total LENgth of selected objects
               (T 0))
           tl (+ tl l)
           n (1- n)))
+  (LM:copytoclipboard (rtos tl))
   (prompt (strcat "Total length of selected objects is " (rtos tl)))
   (princ)
 )
+
+;; Copy to Clipboard  -  Lee Mac
+;; Using the same method as MP demonstrates here: http://bit.ly/170kacW
+
+(defun LM:copytoclipboard ( str / clp htm par )
+    (if (setq htm (vlax-create-object "htmlfile"))
+        (progn
+            (vl-catch-all-apply
+               '(lambda ( )
+                    (setq par (vlax-get htm 'parentwindow)
+                          clp (vlax-get par 'clipboarddata)
+                    )
+                    (vlax-invoke clp 'setdata "Text" str)
+                )
+            )
+            (foreach obj (list clp par htm)
+                (if (= 'vla-object (type obj))
+                    (vlax-release-object obj)
+                )
+            )
+            str
+        )
+    )
+)
+
+(vl-load-com) (princ)
